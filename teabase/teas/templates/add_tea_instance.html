@@ -1,0 +1,26 @@
+{% extends base_template %}
+
+{% block content %}
+<div id="title">
+    <h1>Add an instance of {{ tea }}</h1>
+</div>
+
+<div class="hr"></div>
+
+<div id="main">
+
+    <p class="introduction">Add a specific tea - eg. the cheap {{ tea }} from Zhang's farm in May 2013.</p>
+
+    
+    <form class="pure-form pure-form-aligned" action="." method="post">
+      <fieldset>
+        {% csrf_token %}
+        {{ form.as_p }}
+      </fieldset>
+      <input type="submit" value="Save" class="pure-button pure-button-primary"/>
+    </form>
+</div>
+
+{% endblock %}
+
+{% block title %}Add an instance of a tea{% endblock %}

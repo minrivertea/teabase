@@ -1,0 +1,30 @@
+{% extends base_template %}
+
+{% block content %}
+<div id="title">
+    <h1>Add a farm</h1>
+</div>
+
+<div class="hr"></div>
+
+<div id="main" class="pure-g">
+    
+    <div class="pure-u-1">
+    
+        <p class="introduction">Add a farm</p>
+
+        <form class="pure-form pure-form-aligned" action="." method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+          <input type="submit" value="Save" class="pure-button pure-button-primary"/>
+        </form>
+    
+    
+    </div>
+    
+
+</div>
+
+{% endblock %}
+
+{% block title %}Add a farm{% endblock %}

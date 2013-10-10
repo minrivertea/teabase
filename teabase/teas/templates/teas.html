@@ -1,0 +1,47 @@
+{% extends base_template %}
+
+{% block extrajs %}
+<script type="text/javascript">
+
+function addItem() {
+      
+}
+
+
+
+</script>
+{% endblock %}
+
+
+{% block extracss %}
+<style type="text/css">
+
+
+</style>
+{% endblock %}
+
+{% block content %}
+
+<div id="title" class="pure-g">
+    <h1 class="pure-u-2-3">Teas</h1>
+    <div id="tools" class="pure-u-1-3">
+        <a href="{% url add_tea_type %}" class="pure-button pure-button-primary pure-button-small">Add a tea</a>
+    </div>
+</div>
+
+<div class="hr"></div>
+
+<ul id="items" class="pure-g">
+{% for t in teas %}
+    <li class="pure-u-1-4 {% cycle 'one' '' '' 'four' %}">
+        <div class="inner">
+            <a href="{% url tea t.id %}"><span class="link"></span></a>
+            <a href="{% url tea t.id %}" class="title">{{ t }}</a>
+        </div>
+    </li>
+{% endfor %}
+</ul>
+
+{% endblock %}
+
+{% block title %}Teas{% endblock %}

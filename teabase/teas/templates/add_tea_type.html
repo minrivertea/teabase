@@ -1,0 +1,30 @@
+{% extends base_template %}
+
+{% block content %}
+<div id="title">
+    <h1>Add a type of tea</h1>
+</div>
+
+
+<div class="hr"></div>
+
+<div id="main" class="pure-g">
+
+    <div class="pure-u">
+    
+        <p class="introduction">Add a top-level type of tea - for example "Tie Guan Yin"</p>
+    
+        <form class="pure-form pure-form-aligned" action="." method="post">
+          <fieldset>
+            {% csrf_token %}
+            {{ form.as_p }}
+          </fieldset>
+          <input type="submit" value="Save" class="pure-button pure-button-primary"/>
+        </form>
+
+    </div>
+</div>
+
+{% endblock %}
+
+{% block title %}Add a type of tea{% endblock %}
